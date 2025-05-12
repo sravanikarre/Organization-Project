@@ -14,10 +14,10 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-//    @Override
-//    public Product saveProduct(Product product) {
-//        return productRepository.save(product);
-//    }
+    @Override
+    public void saveProduct(Product product) {
+         productRepository.save(product);
+    }
 
     @Override
     public List<Product> getAllProducts() {

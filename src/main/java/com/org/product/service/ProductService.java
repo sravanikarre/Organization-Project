@@ -12,9 +12,9 @@ public interface ProductService {
     //viswa
     List<Product> getAllProducts();
 //
-//    Product getProductById(Long id);
+   Product getProductById(Long id);
 //
-//    Product updateProduct(Long id, Product product);
+    Product updateProduct(Long id, Product product);
 //
 //    void deleteProduct(Long id);
 

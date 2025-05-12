@@ -17,6 +17,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    //viswa
     @GetMapping("getAllProduct")
     public List<Product> getProducts(){
         return productService.getAllProducts();

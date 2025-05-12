@@ -15,19 +15,18 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    //viswa
     @GetMapping("getallproduct")
     public List<Product> getProducts() {
         return productService.getAllProducts();
     }
 
-        @PostMapping("/createproduct")
-        public void createProduct(@RequestBody Product product) {
-            System.out.println("product name"+ product.getProductName());
-            System.out.println("product price"+ product.getPrice());
+    @PostMapping("/createproduct")
+    public void createProduct(@RequestBody Product product) {
+        System.out.println("product name" + product.getProductName());
+        System.out.println("product price" + product.getPrice());
 
-            productService.saveProduct(product);
-        }
-
-
+        productService.saveProduct(product);
     }
+}
 

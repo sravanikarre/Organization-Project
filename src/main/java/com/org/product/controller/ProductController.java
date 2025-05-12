@@ -15,6 +15,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    //viswa
     @GetMapping("getallproduct")
     public List<Product> getProducts() {
         return productService.getAllProducts();
@@ -32,6 +33,5 @@ public class ProductController {
         return productService.updateProduct(id, product);
     }
 
-
-    }
+}
 

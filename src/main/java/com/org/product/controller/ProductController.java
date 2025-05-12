@@ -23,10 +23,14 @@ public class ProductController {
         @PostMapping("/createproduct")
         public void createProduct(@RequestBody Product product) {
             System.out.println("product name"+ product.getProductName());
-            System.out.println("product price"+ product.getPrice());
+            System.out.println("product price"+ product.getProductPrice());
 
             productService.saveProduct(product);
         }
+    @PutMapping("/{id}")
+    public Product updateProduct(@PathVariable Long id, @RequestBody Product product) {
+        return productService.updateProduct(id, product);
+    }
 
 
     }

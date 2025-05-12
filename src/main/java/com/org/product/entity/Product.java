@@ -15,21 +15,29 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Product {
     @Id
-    private int productId;
+   // @Column(name="id")
+    private int Id;
 
-    @Column(name="product_name")
+    //@Column(name="product_name")
     private String productName;
 
-    @Column(name="product_price")
-    private double price;
+   // @Column(name="product_price")
+    private double productPrice;
 
-
-    public int getProductId() {
-        return productId;
+    public int getId() {
+        return Id;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
     }
 
     public String getProductName() {
@@ -39,13 +47,4 @@ public class Product {
     public void setProductName(String productName) {
         this.productName = productName;
     }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
 }

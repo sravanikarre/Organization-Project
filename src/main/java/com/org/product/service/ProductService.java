@@ -11,11 +11,12 @@ public interface ProductService {
 
     //viswa
     List<Product> getAllProducts();
-//
    Product getProductById(Long id);
 
-    Product updateProduct(Long id, Product product);
-//viswa
-//    void deleteProduct(Long id);
+    void updateProduct(Long id, Product product);
+    void deleteProduct(Long id);
+
+   
+
 
 }

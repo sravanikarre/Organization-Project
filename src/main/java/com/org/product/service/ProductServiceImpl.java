@@ -1,7 +1,6 @@
 package com.org.product.service;
 
 
-
 import com.org.product.dao.ProductRepository;
 import com.org.product.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void saveProduct(Product product) {
-         productRepository.save(product);
+        productRepository.save(product);
     }
 
     @Override
@@ -25,30 +24,27 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findAll();
     }
 
+
     @Override
     public Product getProductById(Long id) {
-        return productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
+        return productRepository.findById(id).orElseThrow(()
+                -> new RuntimeException("Product not found with id" + id));
     }
 
     @Override
-    public Product updateProduct(Long id, Product updatedProduct) {
+    public void updateProduct(Long id, Product updateProduct) {
+
         Product product = getProductById(id);
-        product.setProductName(updatedProduct.getProductName());
-        System.out.println("updatedp"+updatedProduct.getProductName());
+        product.setProductName(updateProduct.getProductName());
+        product.setProductPrice(updateProduct.getProductPrice());
 
-        product.setProductPrice(updatedProduct.getProductPrice());
-        System.out.println("updatedprice"+updatedProduct.getProductPrice());
+        productRepository.save(product);
 
-        System.out.println("product name"+ product.getProductName());
-        System.out.println("product price"+ product.getProductPrice());
-
-        return productRepository.save(product);
     }
-//
-//    @Override
-//    public void deleteProduct(Long id) {
-//        productRepository.deleteById(id);
-//    }
-//}
+
+
+    @Override
+    public void deleteProduct(Long id) {
+        productRepository.deleteById(id);
+    }
 }

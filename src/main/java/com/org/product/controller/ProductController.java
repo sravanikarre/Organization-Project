@@ -15,6 +15,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    //viswa
     @GetMapping("getallproduct")
     public List<Product> getProducts() {
         return productService.getAllProducts();
@@ -25,6 +26,7 @@ public class ProductController {
     public void addProducts(@RequestBody Product product) {
         productService.saveProduct(product);
     }
+
 
     @PutMapping("{id}")
     public void updateProduct(@PathVariable Long id, @RequestBody Product product) {
@@ -38,5 +40,6 @@ public class ProductController {
 
         productService.deleteProduct(id);
     }
+
 }
 
